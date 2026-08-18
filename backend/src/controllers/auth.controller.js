@@ -173,11 +173,16 @@ async function loginUserController(req, res) {
         { expiresIn: "7d" }
     )
 
+    console.log("LOGIN TOKEN GENERATED:", !!token);
+
     res.cookie("token", token, {
     httpOnly: true,
     secure: true,
     sameSite: "none"
     });
+
+    console.log("COOKIE SET");
+
     res.status(200).json({
         message: "User LoggedIn Successfully.",
         user: {
