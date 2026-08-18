@@ -66,7 +66,11 @@ async function registerUserController(req, res) {
         { expiresIn: "7d" }
     )
 
-    res.cookie("token", token)
+    res.cookie("token", token, {
+    httpOnly: true,
+    secure: true,
+    sameSite: "none"
+    });
 
 
     res.status(201).json({
@@ -122,7 +126,11 @@ async function verifyOTPController(req, res) {
         { expiresIn: "7d" }
     )
 
-    res.cookie("token", token)
+    res.cookie("token", token, {
+    httpOnly: true,
+    secure: true,
+    sameSite: "none"
+    });
 
     res.json({
         _id: user._id,
@@ -165,7 +173,11 @@ async function loginUserController(req, res) {
         { expiresIn: "7d" }
     )
 
-    res.cookie("token", token)
+    res.cookie("token", token, {
+    httpOnly: true,
+    secure: true,
+    sameSite: "none"
+    });
     res.status(200).json({
         message: "User LoggedIn Successfully.",
         user: {
