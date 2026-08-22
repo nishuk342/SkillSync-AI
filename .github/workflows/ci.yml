@@ -59,6 +59,7 @@ jobs:
         run: npm run build
 
       - name: Build Docker image
-        run: docker build \
-          --build-arg VITE_API_URL=http://localhost:5050 \
-          -t skillsync-frontend .
+        run: |
+          docker build \
+            --build-arg VITE_API_URL=http://localhost:5050 \
+            -t skillsync-frontend .
