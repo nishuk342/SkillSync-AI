@@ -445,21 +445,31 @@ http://localhost:5173
 
 ## 🐳 Docker
 
-### Backend
+The application is containerized using Docker, with separate containers for the frontend and backend.
 
-``` bash
-cd backend
-docker build -t skillsync-backend .
-docker run -p 5050:5050 --env-file .env skillsync-backend
+Docker Compose is used to run the application services together.
+
+### Start the application with Docker Compose
+
+From the project root:
+
+```bash
+docker compose up --build
 ```
 
-### Frontend
+To run the services in the background:
 
-``` bash
-cd frontend
-docker build --build-arg VITE_API_URL=http://localhost:5050 -t skillsync-frontend .
-docker run -p 5173:5173 skillsync-frontend
+```bash
+docker compose up --build -d
 ```
+
+To stop the services:
+
+```bash
+docker compose down
+```
+
+The frontend and backend services can then communicate through the Docker Compose network.
 
 ------------------------------------------------------------------------
 
@@ -643,18 +653,17 @@ test-ci → main
 
 ## 📈 Future Improvements
 
--   Automated unit and integration tests
--   More comprehensive CI checks
--   Continuous Deployment through GitHub Actions
--   Docker image publishing
--   Docker Compose for local development
--   API rate limiting
--   Improved error handling
--   More detailed interview analytics
--   AI-powered mock interviews
--   Real-time interview simulation
--   Resume ATS scoring
--   Role-specific interview simulations
+- Automated unit and integration tests
+- More comprehensive CI checks
+- Continuous Deployment through GitHub Actions
+- Docker image publishing
+- API rate limiting
+- Improved error handling
+- More detailed interview analytics
+- AI-powered mock interviews
+- Real-time interview simulation
+- Resume ATS scoring
+- Role-specific interview simulations
 
 ------------------------------------------------------------------------
 
