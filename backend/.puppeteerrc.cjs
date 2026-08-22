@@ -1,0 +1,11 @@
+const { join } = require("path");
+
+module.exports = {
+    cacheDirectory: join(__dirname, ".cache", "puppeteer"),
+    chrome: {
+        skipDownload: false
+    },
+    "chrome-headless-shell": {
+        skipDownload: true
+    }
+};

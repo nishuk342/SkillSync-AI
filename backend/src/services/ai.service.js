@@ -319,7 +319,7 @@ Requirements:
 - Return it in the "title" field.
 
 3. TECHNICAL QUESTIONS
-- Generate 5 technical interview questions.
+- Generate 10 technical interview questions.
 - EACH item in technicalQuestions MUST be an OBJECT.
 - Each object MUST contain:
   - question
@@ -328,7 +328,7 @@ Requirements:
 - Do NOT return technicalQuestions as an array of strings.
 
 4. BEHAVIORAL QUESTIONS
-- Generate 5 behavioral interview questions.
+- Generate 10 behavioral interview questions.
 - EACH item in behavioralQuestions MUST be an OBJECT.
 - Each object MUST contain:
   - question

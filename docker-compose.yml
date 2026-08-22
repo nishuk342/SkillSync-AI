@@ -1,0 +1,21 @@
+services:
+
+  backend:
+    build:
+      context: ./backend
+    container_name: skillsync-backend
+    ports:
+      - "5050:5050"
+    env_file:
+      - ./backend/.env
+
+  frontend:
+    build:
+      context: ./frontend
+      args:
+        VITE_API_URL: http://localhost:5050
+    container_name: skillsync-frontend
+    ports:
+      - "5173:80"
+    depends_on:
+      - backend
